@@ -10,17 +10,28 @@ package messageservice;
  *
  * @author viewt_000
  */
-public class MessageService {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        MessageReader reader = new SwingReader();
-        MessageWriter writer = new SwingWriter();
-        String test = reader.readMessage();
-        writer.writeMessage(test);
+public class MessageService
+{
+    private MessageReader reader;
+    private MessageWriter writer;
+    
+    public MessageService(MessageReader reader, MessageWriter writer)
+    {
+        setReader(reader);
+        setWriter(writer);
     }
     
+    public void processMessage()
+    {
+        String message = reader.readMessage();
+        writer.writeMessage(message);
+    }
+
+    public final void setReader(MessageReader reader) {
+        this.reader = reader;
+    }
+
+    public final void setWriter(MessageWriter writer) {
+        this.writer = writer;
+    }
 }
