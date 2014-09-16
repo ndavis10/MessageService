@@ -14,7 +14,7 @@ public class ArrayReader implements MessageReader
 {
     private String[] strings =
     {"This is a test", "Please do not adjust your settings", "This has been a test"};
-    private final Random randomGenerator = new Random();
+    private final Random randomGenerator = new Random(System.nanoTime());
     
     public ArrayReader()
     {
@@ -32,7 +32,7 @@ public class ArrayReader implements MessageReader
         return strings[randomGenerator.nextInt(strings.length)];
     }
     
-    public void setStrings(String[] strings)
+    public final void setStrings(String[] strings)
     {
         this.strings = strings;
     }
