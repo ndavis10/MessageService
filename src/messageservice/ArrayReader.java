@@ -12,13 +12,28 @@ import java.util.*;
  */
 public class ArrayReader implements MessageReader
 {
-    private static final String[] TEST_STRINGS =
+    private String[] strings =
     {"This is a test", "Please do not adjust your settings", "This has been a test"};
     private final Random randomGenerator = new Random();
+    
+    public ArrayReader()
+    {
+        
+    }
+    
+    public ArrayReader(String[] strings)
+    {
+        setStrings(strings);
+    }
     
     @Override
     public String readMessage()
     {
-        return TEST_STRINGS[randomGenerator.nextInt(TEST_STRINGS.length - 1)];
+        return strings[randomGenerator.nextInt(strings.length)];
+    }
+    
+    public void setStrings(String[] strings)
+    {
+        this.strings = strings;
     }
 }
