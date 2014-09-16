@@ -5,11 +5,16 @@
  */
 
 package messageservice;
-
+import javax.swing.*;
 /**
  *
  * @author viewt_000
  */
-public interface MessageWriter {
-    public abstract void writeMessage(String message);
+public class SwingWriter implements MessageWriter{
+    
+    @Override
+    public void writeMessage(String message)
+    {
+        JOptionPane.showMessageDialog(null, message);
+    }
 }

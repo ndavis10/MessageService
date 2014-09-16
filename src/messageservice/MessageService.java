@@ -17,6 +17,10 @@ public class MessageService {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MessageReader reader = new SwingReader();
+        MessageWriter writer = new SwingWriter();
+        String test = reader.readMessage();
+        writer.writeMessage(test);
     }
     
 }

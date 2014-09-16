@@ -5,11 +5,16 @@
  */
 
 package messageservice;
-
+import javax.swing.*;
 /**
  *
  * @author viewt_000
  */
-public interface MessageWriter {
-    public abstract void writeMessage(String message);
+public class SwingReader implements MessageReader
+{
+    @Override
+    public String readMessage()
+    {
+        return JOptionPane.showInputDialog(null, null, "Please enter text.");
+    }
 }

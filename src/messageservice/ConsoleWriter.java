@@ -10,6 +10,11 @@ package messageservice;
  *
  * @author viewt_000
  */
-public interface MessageWriter {
-    public abstract void writeMessage(String message);
+public class ConsoleWriter implements MessageWriter
+{
+    @Override
+    public void writeMessage(String message)
+    {
+        System.out.println(message);
+    }
 }
